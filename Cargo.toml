@@ -1,9 +1,37 @@
-[package]
-name = "tiny-fly"
-version = "0.1.0"
-edition = "2021"
-authors = ["AeroRust <aerospace.rust@gmail.com>"]
+# Cargo.toml
 
+[package]
+name = "free-flight"
+version = "0.1.0"
+authors = [
+    "Brendan Sechter <sgeos@hotmail.com>",
+    "AeroRust <aerospace.rust@gmail.com>",
+]
+categories = [
+    "aerospace::drones",
+    "aerospace::unmanned-aerial-vehicles",
+    "embedded",
+    "no-std",
+    "no-std::no-alloc",
+]
+description = "A dRehmFlight insired flight controller firmware written in Rust."
+documentation = "https://docs.rs/free-flight"
+edition = "2021"
+keywords = [
+    "control-systems",
+    "embedded",
+]
+license = "GPL-3.0"
+readme = "README.md"
+repository = "https://github.com/AeroRust/free_flight"
 
 [dependencies]
+ahrs = "0.6.0"
+free-flight-stabilization = "0.1.0"
+libc = "0.2.154" # TODO: remove once running on hardware
+nalgebra = "0.31.4"
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+piddiy = "0.1.1"
 
+[dev-dependencies]
+fixed = { version = "1.27.0", features = ["num-traits"] }
